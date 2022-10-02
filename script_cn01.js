@@ -41,3 +41,54 @@ liTag2(document.getElementById("menu22"), document.getElementById("menu2"));
 liTag2(document.getElementById("menu33"), document.getElementById("menu3"));
 liTag2(document.getElementById("menu44"), document.getElementById("menu4"));
 liTag2(document.getElementById("menu55"), document.getElementById("menu5"));
+
+var listofsub = document.getElementsByClassName("s-item");
+for (let i = 0; i < listofsub.length; i++) {
+    listofsub[i].onclick = function() {
+        listofsub[i].style.color = "white";
+        listofsub[i].style.backgroundColor = "orange";
+    }
+}
+function subcheck(obj1) {
+    obj1.onclick = function() {
+        if (obj1.style.color == "white") {
+            obj1.style.color = "black";
+            obj1.style.backgroundColor = "rgb(238, 238, 238)";
+        } else {
+            obj1.style.color = "white";
+            obj1.style.backgroundColor = "orange";
+        }
+    }
+}
+for (let i = 0; i < listofsub.length; i++) {
+    subcheck(listofsub[i]);
+}
+
+var listofselected = document.getElementsByClassName("se-item");
+for (let i = 0; i < listofselected.length; i++) {
+    listofselected[i].onclick = function() {
+        listofselected[i].style.color = "white";
+        listofselected[i].style.backgroundColor = "orange";
+    }
+}
+function slcheck(obj1) {
+    obj1.onclick = function() {
+        if (obj1.style.color == "white") {
+            obj1.style.color = "black";
+            obj1.style.backgroundColor = "#fffa90";
+        } else {
+            obj1.style.color = "white";
+            obj1.style.backgroundColor = "orange";
+        }
+    }
+}
+for (let i = 0; i < listofselected.length; i++) {
+    slcheck(listofselected[i]);
+}
+
+$(function () {
+    $("#list1, #list2").sortable({
+        connectWith: ".lists",
+        cursor: "move"
+    }).disableSelection();
+});

@@ -92,3 +92,77 @@ $(function () {
         cursor: "move"
     }).disableSelection();
 });
+
+document.getElementById("button1").onclick = function() {
+    var listt = document.getElementsByClassName("s-item");
+    var listt1 = [];
+    for (let i = 0; i < listt.length; i++) {
+        if (listt[i].style.color == "white") {
+            listt1.push(listt[i]);
+            listt[i].removeAttribute('style');
+        }
+    }
+    for (let i = 0; i < listt1.length; i++) {
+        document.getElementById("list2").appendChild(listt1[i]);
+        // listt1[i].style.backgroundColor = "#fffa90";
+        // listt1[i].style.color = "black"
+        listt1[i].className = "se-item";
+    }
+}
+// var s_item = document.getElementsByClassName("s-item");
+// for (let i = 0; i < s_item.length; i++) {
+//     if (document.getElementById("list2").contains(s_item[i])) {
+//         s_item[i].style.backgroundColor = "#fffa90";
+//         s_item[i].style.color = "black";
+//         console.log("a");
+//     }
+// }
+
+document.getElementById("button2").onclick = function() {
+    var listt = document.getElementsByClassName("s-item");
+    var listt1 = [];
+    for (let i = 0; i < listt.length; i++) {
+        
+        listt1.push(listt[i]);
+        
+    }
+    for (let i = 0; i < listt1.length; i++) {
+        document.getElementById("list2").appendChild(listt1[i]);
+        // listt1[i].style.backgroundColor = "#fffa90";
+        // listt1[i].style.color = "black"
+        listt1[i].className = "se-item";
+    }
+}
+
+document.getElementById("button3").onclick = function() {
+    var listt = document.getElementsByClassName("se-item");
+    var listt1 = [];
+    for (let i = 0; i < listt.length; i++) {
+        if (listt[i].style.color == "white") {
+            listt1.push(listt[i]);
+            listt[i].removeAttribute('style');
+        }
+    }
+    for (let i = 0; i < listt1.length; i++) {
+        document.getElementById("list1").appendChild(listt1[i]);
+        // listt1[i].style.backgroundColor = "#fffa90";
+        // listt1[i].style.color = "black"
+        listt1[i].className = "s-item";
+    }
+}
+
+document.getElementById("button4").onclick = function() {
+    var listt = document.getElementsByClassName("se-item");
+    var listt1 = [];
+    for (let i = 0; i < listt.length; i++) {
+        
+        listt1.push(listt[i]);
+        
+    }
+    for (let i = 0; i < listt1.length; i++) {
+        document.getElementById("list1").appendChild(listt1[i]);
+        // listt1[i].style.backgroundColor = "#fffa90";
+        // listt1[i].style.color = "black"
+        listt1[i].className = "s-item";
+    }
+}

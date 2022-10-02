@@ -211,3 +211,98 @@ hideshow1(document.getElementById("tridown2"), document.getElementsByClassName("
 hideshow2(document.getElementById("triright1"), document.getElementsByClassName("contenthide")[0]);
 hideshow2(document.getElementById("triright2"), document.getElementsByClassName("contenthide")[1]);
 
+// validation phần nhập liệu
+
+
+
+var submit = document.getElementById("button6");
+submit.onclick = function() {
+    var check, regex3, regex4, regex5, regex6, checkk = true;
+    var testid = document.getElementById("maso").value;
+    var regex1 = /^[1][7-9]\d{6}$/;
+    var regex2 = /^[2][0-2]\d{6}$/;
+    if (regex1.test(testid) == false && regex2.test(testid) == false) {
+        document.getElementById("maso").style.border = "1px solid red";
+        checkk = false;
+    } else {
+        document.getElementById("maso").style.border = "1px solid gray";
+    }
+
+    var testusername = document.getElementById("name").value;
+    regex3 = /[a-zA-Z]+\s+[a-zA-Z]+/g;
+    check = regex3.test(testusername);
+    if (check == false) {
+        document.getElementById("name").style.border = "1px solid red";
+        checkk = false;
+    } else {
+        document.getElementById("name").style.border = "1px solid gray";
+    }
+
+    var testaddress = document.getElementById("address").value;
+    regex4 = /[a-zA-Z]+\s+[a-zA-Z]+/g;
+    check = regex4.test(testaddress);
+    if (check == false) {
+        document.getElementById("address").style.border = "1px solid red";
+        checkk = false;
+    } else {
+        document.getElementById("address").style.border = "1px solid gray";
+    }
+        
+    var testphone = document.getElementById("phone").value;
+    regex5 = /^[0]\d{9}$/;
+    check = regex5.test(testphone);
+    if (check == false) {
+        document.getElementById("phone").style.border = "1px solid red";
+        checkk = false;
+    } else {
+        document.getElementById("phone").style.border = "1px solid gray";
+    }
+
+    var testemail = document.getElementById("email").value;
+    regex6 = /^[a-z][a-z0-9\._]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,}){1,3}$/;
+    check = regex6.test(testemail);
+    if (check == false) {
+        document.getElementById("email").style.border = "1px solid red";
+        checkk = false;
+    } else {
+        document.getElementById("email").style.border = "1px solid gray";
+    }
+    if (checkk == false) {
+        return;
+    } else {
+        var newtr = document.createElement("tr");
+        var newnode = document.createElement("td");
+        var text = document.createTextNode(testid);
+        newnode.appendChild(text);
+        newtr.appendChild(newnode);
+
+        newnode = document.createElement("td");
+        text = document.createTextNode(testusername);
+        newnode.appendChild(text);
+        newtr.appendChild(newnode);
+
+        newnode = document.createElement("td");
+        var gen1 = document.getElementById("gender1").checked;
+        var gen2 = document.getElementById("gender2").checked;
+        if (gen1 == true) {
+            text = document.createTextNode("Nam");
+        } else {
+            text = document.createTextNode("Nữ");
+        }
+        newnode.appendChild(text);
+        newtr.appendChild(newnode);
+
+        newnode = document.createElement("td");
+        text = document.createTextNode(document.getElementById("date").value);
+        newnode.appendChild(text);
+        newtr.appendChild(newnode);
+
+        document.getElementsByTagName("table")[0].appendChild(newtr);
+        var listselect = document.getElementsByClassName("se-item");
+        for (let i = 0; i < listselect.length; i++) {
+            alert(listselect[i].textContent);
+        }
+        
+    }
+
+}

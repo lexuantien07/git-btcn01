@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./style.css">  
     <title>BTCN01 - 20120593</title>
 </head>
 <body>
@@ -18,7 +20,7 @@
                 <li id="menu5">Menu 5</li>
             </ul>
         </div>
-
+        
         <div class="item2">
             <!-- <div class="form"> -->
                 <div class="header">ĐĂNG KÝ HỌC PHẦN</div>
@@ -60,17 +62,17 @@
             <!-- </div> -->
 
             <div class="register">
-                <div id="list1" class="subjects lists">
+                <div class="subjects">
                     <div class="s-header" style="text-align: end; color: #ffa207;">Các môn học</div>
-                    <!-- <div class="s-wrapper"> -->
-                    <div class="s-item">Lập trình hướng đối tượng</div>
-                    <div class="s-item">Lập trình hướng đối tượng</div>
-                    <div class="s-item">Lập trình hướng đối tượng</div>
-                    <div class="s-item">Lập trình hướng đối tượng</div>
-                    <div class="s-item">Lập trình hướng đối tượng</div>
-                    <div class="s-item">Lập trình hướng đối tượng</div>
-                    <div class="s-item">Lập trình hướng đối tượng</div>
-                    <!-- </div> -->
+                    <div class="s-wrapper lists" id="list1">
+                        <div class="s-item">Lập Trình Hướng Đối Tượng</div>
+                        <div class="s-item">Cấu Trúc Dữ Liệu</div>
+                        <div class="s-item">Lập Trình Windows</div>
+                        <div class="s-item">NM Công Nghệ Phần Mềm</div>
+                        <div class="s-item">Trí Tuệ Nhân Tạo</div>
+                        <div class="s-item">Phát Triển Ứng Dụng Web</div>
+                        <div class="s-item">Cơ Sở Dữ Liệu</div>
+                    </div>
                 </div>
                 <div class="buttongroup">
                     <input class="button" id="button1" name="button1" type="button" value=">">
@@ -78,13 +80,13 @@
                     <input class="button" id="button3" name="button3" type="button" value="<">
                     <input class="button" id="button4" name="button4" type="button" value="<<">
                 </div>
-                <div id="list2" class="selected lists">
+                <div class="selected">
                     <div class="se-header" style="text-align: start; color: #ffa207;">Các môn học đã chọn</div>
-                    <!-- <div class="se-wrapper"> -->
-                    <div class="se-item">Lập trình hướng đối tượng</div>
-                    <div class="se-item">Lập trình hướng đối tượng</div>
-                    <div class="se-item">Lập trình hướng đối tượng</div>
-                    <!-- </div> -->
+                    <div class="se-wrapper lists" id="list2">
+                        <div class="se-item">Nhập Môn Lập Trình</div>
+                        <div class="se-item">Kỹ Thuật Lập Trình</div>
+                        <div class="se-item">Lập Trình Ứng Dụng Java</div>
+                    </div>
                 </div>
             </div>
 
@@ -92,10 +94,83 @@
                 <input class="button" id="button6" name="button6" type="button" value="Đăng ký">
                 <input class="button" id="button7" name="button7" type="button" value="Xoá hết">
             </div>
-        </div>
 
+            <div class="result">
+                <table>
+                    <tr style="background-color: #FF8207; color: #FFBE7E;">
+                      <th width: 10%>Mã số</th>
+                      <th width: 20%>Họ và tên</th>
+                      <th width: 30%>Giới tính</th>
+                      <th width: 40%>Ngày sinh</th>
+                    </tr>
+                    <tr>
+                      <td>20120001</td>
+                      <td>Nguyễn Thị A</td>
+                      <td>Nữ</td>
+                      <td>07/08/2002</td>
+                    </tr>
+                    <tr>
+                      <td>20120123</td>
+                      <td>Trần Văn C</td>
+                      <td>Nam</td>
+                      <td>12/24/2002</td>
+                    </tr>
+                    <tr>
+                      <td>20120274</td>
+                      <td>Lê Văn G</td>
+                      <td>Nam</td>
+                      <td>06/13/2002</td>
+                    </tr>
+                    <tr>
+                      <td>20120634</td>
+                      <td>Ngô Thị E</td>
+                      <td>Nữ</td>
+                      <td>10/10/2002</td>
+                    </tr>
+                  </table>
+            </div>
+        </div>
         <div class="item3">
-            3
+            <div id="news01" class="news">
+                <div class="n-header">
+                    <div class="triangle-down"></div>
+                    <div class="twoside" style="color: white;">↕</div>
+                    <div class="n1-header-text">News 01</div>
+                </div>
+                <div class="content">
+                  <p>content content</p>
+                </div>
+            </div>
+            <div id="news02" class="news">
+                <div class="n-header">
+                    <div class="triangle-right"></div>
+                    <div class="twoside" style="color: rgb(50, 50, 50);">↕</div>
+                    <div class="n2-header-text">News 02</div>
+                </div>
+                <div class="content">
+                  <p>content content</p>
+                </div>
+            </div>
+            <div id="news03" class="news">
+                <div class="n-header">
+                    <div class="triangle-down"></div>
+                    <div class="twoside">↕</div>
+                    <div class="n3-header-text">News 03</div>
+                </div>
+                <div class="content">
+                  <p>content content</p>
+                </div>
+            </div>
+            <div id="news04" class="news">
+                <div class="n-header">
+                    <div class="triangle-down"></div>
+                    <div class="twoside">↕</div>
+                    <div class="n4-header-text">News 04</div>
+                </div>
+                <div class="content">
+                  <p>content content</p>
+                </div>
+            </div>
         </div>
 
         <div class="item4">
@@ -110,5 +185,9 @@
             </ul>
         </div>
     </div>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+      <script src="./script.js"></script>
 </body>
 </html>

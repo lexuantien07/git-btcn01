@@ -180,3 +180,34 @@ $( function() {
 $( function() {
     $( "#news04" ).draggable();
 });
+
+function hideshow1(obj, ctobj) {
+    obj.onclick = function() {
+        if (obj.className == "triangle-right") {
+            obj.className = "triangle-down";
+            ctobj.removeAttribute("style");
+        } else {
+            obj.className = "triangle-right";
+            ctobj.style.display = "none";
+        }
+    }
+
+}
+function hideshow2(obj, ctobj) {
+    obj.onclick = function() {
+        if (obj.className == "triangle-down") {
+            obj.className = "triangle-right";
+            ctobj.removeAttribute("style");
+        } else {
+            obj.className = "triangle-down";
+            ctobj.style.display = "block";
+        }
+    }
+
+}
+
+hideshow1(document.getElementById("tridown1"), document.getElementsByClassName("contentshow")[0]);
+hideshow1(document.getElementById("tridown2"), document.getElementsByClassName("contentshow")[1]);
+hideshow2(document.getElementById("triright1"), document.getElementsByClassName("contenthide")[0]);
+hideshow2(document.getElementById("triright2"), document.getElementsByClassName("contenthide")[1]);
+

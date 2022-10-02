@@ -166,3 +166,17 @@ document.getElementById("button4").onclick = function() {
         listt1[i].className = "s-item";
     }
 }
+
+$( function() {
+    $( "#news01" ).draggable();
+});
+
+$( function() {
+    $( "#news02" ).draggable();
+});
+$( function() {
+    $( "#news03" ).draggable();
+});
+$( function() {
+    $( "#news04" ).draggable();
+});

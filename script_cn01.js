@@ -1,34 +1,42 @@
-var lis = document.getElementsByTagName("li");
-for (let x of lis) {
-    x.onclick = function() {
-        check = true;
-        x.style.color = "red";
-    }
-}
 
-document.getElementById('b').onclick = '';
+var lis = document.getElementsByTagName("li");
+
 function liTag1(obj1, obj2) {
     obj1.onclick = function() {
     
-        for (let x of lis) {
-            if (x.style.color == "red") {
-                x.style.color = "#4e77d8";
+        for (let i = 0; i < lis.length - 10; i++) {
+            if (lis[i].style.color == "rgb(255, 177, 47)") {
+                lis[i].style.color = "#4e77d8";
             }
         }
-        obj1.style.color = "red";
-        obj2.style.color = "red";
+        for (let i = 6; i < lis.length; i++) {
+            if (lis[i].style.color == "rgb(255, 226, 177)") {
+                lis[i].style.color = "#FFB12F";
+                lis[i].style.backgroundColor = "#FFE2B1"
+            }
+        }
+        obj1.style.color = "rgb(255, 177, 47)";
+        obj2.style.color = "#FFE2B1";
+        obj2.style.backgroundColor = "#FF962F";
     }
 }
 function liTag2(obj1, obj2) {
     obj1.onclick = function() {
     
-        for (let x of lis) {
-            if (x.style.color == "red") {
-                x.style.color = "#4e77d8";
+        for (let i = 0; i < lis.length - 10; i++) {
+            if (lis[i].style.color == "rgb(255, 177, 47)") {
+                lis[i].style.color = "#4e77d8";
             }
         }
-        obj1.style.color = "red";
-        obj2.style.color = "red";
+        for (let i = 6; i < lis.length; i++) {
+            if (lis[i].style.color == "rgb(255, 226, 177)") {
+                lis[i].style.color = "#FFB12F";
+                lis[i].style.backgroundColor = "#FFE2B1"
+            }
+        }
+        obj2.style.color = "rgb(255, 177, 47)";
+        obj1.style.color = "#FFE2B1";
+        obj1.style.backgroundColor = "#FF962F";
     }
 }
 liTag1(document.getElementById("menu1"), document.getElementById("menu11"));
@@ -42,6 +50,7 @@ liTag2(document.getElementById("menu33"), document.getElementById("menu3"));
 liTag2(document.getElementById("menu44"), document.getElementById("menu4"));
 liTag2(document.getElementById("menu55"), document.getElementById("menu5"));
 
+document.getElementById('b').onclick = '';
 var listofsub = document.getElementsByClassName("s-item");
 for (let i = 0; i < listofsub.length; i++) {
     listofsub[i].onclick = function() {
@@ -104,20 +113,9 @@ document.getElementById("button1").onclick = function() {
     }
     for (let i = 0; i < listt1.length; i++) {
         document.getElementById("list2").appendChild(listt1[i]);
-        // listt1[i].style.backgroundColor = "#fffa90";
-        // listt1[i].style.color = "black"
         listt1[i].className = "se-item";
     }
 }
-// var s_item = document.getElementsByClassName("s-item");
-// for (let i = 0; i < s_item.length; i++) {
-//     if (document.getElementById("list2").contains(s_item[i])) {
-//         s_item[i].style.backgroundColor = "#fffa90";
-//         s_item[i].style.color = "black";
-//         console.log("a");
-//     }
-// }
-
 document.getElementById("button2").onclick = function() {
     var listt = document.getElementsByClassName("s-item");
     var listt1 = [];
@@ -128,8 +126,6 @@ document.getElementById("button2").onclick = function() {
     }
     for (let i = 0; i < listt1.length; i++) {
         document.getElementById("list2").appendChild(listt1[i]);
-        // listt1[i].style.backgroundColor = "#fffa90";
-        // listt1[i].style.color = "black"
         listt1[i].className = "se-item";
     }
 }
@@ -145,8 +141,6 @@ document.getElementById("button3").onclick = function() {
     }
     for (let i = 0; i < listt1.length; i++) {
         document.getElementById("list1").appendChild(listt1[i]);
-        // listt1[i].style.backgroundColor = "#fffa90";
-        // listt1[i].style.color = "black"
         listt1[i].className = "s-item";
     }
 }
@@ -161,59 +155,58 @@ document.getElementById("button4").onclick = function() {
     }
     for (let i = 0; i < listt1.length; i++) {
         document.getElementById("list1").appendChild(listt1[i]);
-        // listt1[i].style.backgroundColor = "#fffa90";
-        // listt1[i].style.color = "black"
         listt1[i].className = "s-item";
     }
 }
 
-$( function() {
-    $( "#news01" ).draggable();
+// item 3 side
+
+$(function () {
+    $("#newsgroup").sortable({
+        cursor: "move"
+    }).disableSelection();
 });
 
-$( function() {
-    $( "#news02" ).draggable();
-});
-$( function() {
-    $( "#news03" ).draggable();
-});
-$( function() {
-    $( "#news04" ).draggable();
-});
 
-function hideshow1(obj, ctobj) {
+function hideshow1(obj, ctobj, ar,colr) {
     obj.onclick = function() {
         if (obj.className == "triangle-right") {
             obj.className = "triangle-down";
             ctobj.removeAttribute("style");
+            ar.style.color = "white";
+            colr.className = "n-header";
         } else {
             obj.className = "triangle-right";
             ctobj.style.display = "none";
+            ar.style.color = "black";
+            colr.className = "n-header changecolor";
         }
     }
 
 }
-function hideshow2(obj, ctobj) {
+function hideshow2(obj, ctobj, ar,colr) {
     obj.onclick = function() {
         if (obj.className == "triangle-down") {
             obj.className = "triangle-right";
             ctobj.removeAttribute("style");
+            ar.style.color = "black";
+            colr.className = "n-header changecolor";
         } else {
             obj.className = "triangle-down";
             ctobj.style.display = "block";
+            ar.style.color = "white";
+            colr.className = "n-header";
         }
     }
 
 }
 
-hideshow1(document.getElementById("tridown1"), document.getElementsByClassName("contentshow")[0]);
-hideshow1(document.getElementById("tridown2"), document.getElementsByClassName("contentshow")[1]);
-hideshow2(document.getElementById("triright1"), document.getElementsByClassName("contenthide")[0]);
-hideshow2(document.getElementById("triright2"), document.getElementsByClassName("contenthide")[1]);
+hideshow1(document.getElementById("tridown1"), document.getElementsByClassName("contentshow")[0], document.getElementsByClassName("twoside")[0],document.getElementsByClassName("n-header")[0]);
+hideshow1(document.getElementById("tridown2"), document.getElementsByClassName("contentshow")[1], document.getElementsByClassName("twoside")[2],document.getElementsByClassName("n-header")[2]);
+hideshow2(document.getElementById("triright1"), document.getElementsByClassName("contenthide")[0], document.getElementsByClassName("twoside")[1],document.getElementsByClassName("n-header")[1]);
+hideshow2(document.getElementById("triright2"), document.getElementsByClassName("contenthide")[1], document.getElementsByClassName("twoside")[3],document.getElementsByClassName("n-header")[3]);
 
 // validation phần nhập liệu
-
-
 
 var submit = document.getElementById("button6");
 submit.onclick = function() {
@@ -305,4 +298,16 @@ submit.onclick = function() {
         
     }
 
+}
+
+var clear = document.getElementById("button7");
+clear.onclick = function() {
+    document.getElementById("maso").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("gender1").checked = false;
+    document.getElementById("gender2").checked = false;
+    document.getElementById("date").value = "";
+    document.getElementById("email").value = "";
 }
